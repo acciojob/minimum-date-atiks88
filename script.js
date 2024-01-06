@@ -1,5 +1,15 @@
 function minDate(dates) {
   //write you code here
+	  const dateObjects = dates.map(dateString => new Date(dateString));
+
+  // Sort the Date objects
+  dateObjects.sort((a, b) => a - b);
+
+  // Convert back to date strings
+  const sortedDates = dateObjects.map(date => date.toLocaleDateString('en-CA')); // Adjust locale as needed
+
+  return sortedDates;
+}
 }
 
 // Do not change the code
@@ -37,4 +47,5 @@ var dates = [
   "2023/03/30",
 ];
 
-alert(minDate(dates));
+ alert(minDate(dates));
+
